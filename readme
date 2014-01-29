@@ -1,0 +1,8 @@
+NAnt Script Builder
+
+A rather simple translation of a Visual Studio project or .NET code file into an NAnt Script. The idea is that it allows
+you to have the ease and comfort of working in Visual Studio but still allows you to avoid compiled version of NAnt extensions
+which can at times be problematic.
+
+Current implementation is rather crude and could easily miss required references. For now, it should be expected that you will
+need to manually review added references and test to ensure that the translation worked correctly.
