@@ -54,8 +54,8 @@ namespace NAntScriptBuilder
             // really fuzzy - will probably always need to be checked manually after the fact
             foreach (var import in Imports)
             {
-                if (Constants.SystemReferences.ContainsKey(import))
-                    refs.Add(Constants.SystemReferences[import]);
+                if (Defaults.SystemReferences.ContainsKey(import))
+                    refs.Add(Defaults.SystemReferences[import]);
             }
 
             References = new ReadOnlyCollection<string>(refs);
@@ -79,7 +79,7 @@ namespace NAntScriptBuilder
 
                         foundNamespace = true;
                     }
-                    else
+                    else if(line.IsNotEmpty())
                     {
                         // should be valid code
                         code.AppendLine(line);
@@ -104,7 +104,7 @@ namespace NAntScriptBuilder
                 if (IsImport(line))
                 {
                     string import = GetImportValue(line);
-                    if(!Constants.DefaultIncludes.Contains(import))
+                    if(!Defaults.Includes.Contains(import))
                         imports.Add(import);
                 }
             }
