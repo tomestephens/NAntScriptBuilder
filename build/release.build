@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="generate_release">
+	<target name="generate_release" description="Generate Release">
+		<property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" />
+		<exec program="${MSBuildPath}">
+			<arg line='"..\src\NAntScriptBuilder\NAntScriptBuilder.sln"' />
+			<arg line="/property:Configuration=Release" />
+			<arg value="/nologo" />
+			<arg value="/m" />
+		</exec>
+
+		<zip zipfile="..\release.zip">
+			<fileset basedir="..\output">
+				<include name="NAntScriptBuilder.dll" />
+			</fileset>
+			<fileset basedir="..\">
+				<include name="readme" />
+				<include name="license" />
+			</fileset>
+		</zip>
+	</target>
+</project>
