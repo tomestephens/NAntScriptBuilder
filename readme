@@ -4,5 +4,5 @@ A rather simple translation of a Visual Studio project or .NET code file into an
 you to have the ease and comfort of working in Visual Studio but still allows you to avoid compiled version of NAnt extensions
 which can at times be problematic.
 
-Current implementation is rather crude and could easily miss required references. For now, it should be expected that you will
-need to manually review added references and test to ensure that the translation worked correctly.
+Current implementation is rather crude and could easily miss required references. I should be expected that you will
+need to manually review the translation. For the moment, The goal here is to cover the bulk of the work and then it can be verified manually.
